@@ -20,3 +20,12 @@ terraform init
 terraform plan -out plan
 terraform apply "plan"
 ```
+
+Then, we can proceed with vpc provision in the Ireland region:
+
+```bash
+cd infrastructure/terraform/ireland
+terraform init
+terraform plan -out plan
+terraform apply "plan"
+```
