@@ -1,7 +1,6 @@
 variable "vpc_name" {
-  description = "(Optional) The name of the VPC"
+  description = "The name of the VPC"
   type        = string
-  default     = "monaboiste-vpc"
 }
 
 variable "tags" {
