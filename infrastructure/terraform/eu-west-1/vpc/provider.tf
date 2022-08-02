@@ -14,7 +14,7 @@ terraform {
 
   backend "s3" {
     bucket         = "monaboiste-terraform-state"
-    key            = "vpc/ireland/terraform.tfstate"
+    key            = "eu-west-1/vpc/monaboiste-vpc/terraform.tfstate"
     region         = "eu-west-1"
     dynamodb_table = "monaboiste-terraform-state-locks"
     encrypt        = true

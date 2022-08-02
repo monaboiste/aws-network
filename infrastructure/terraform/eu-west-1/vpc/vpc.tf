@@ -1,5 +1,5 @@
 module "vpc" {
-  source                     = "../module/vpc"
+  source                     = "../../module/vpc"
   vpc_name                   = local.vpc_name
   availability_zones         = local.availability_zones
   cidr_block                 = local.cidr_block

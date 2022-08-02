@@ -7,6 +7,6 @@ locals {
   private_subnets_cidr_block = ["10.0.128.0/20", "10.0.144.0/20"]
 
   tags = {
-    "Automation" : "git@github.com:monaboiste/aws-network.git infrastructure/terraform/ireland"
+    "Automation" : "git@github.com:monaboiste/aws-network.git infrastructure/terraform/${local.region}/vpc"
   }
 }

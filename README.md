@@ -18,7 +18,7 @@ we use DynamoDB for user locking.
 The very first thing, we need to initialize the backend, which will be storing state of all resources:
 
 ```bash
-cd infrastructure/terraform/backend
+cd infrastructure/terraform/global/backend
 terraform init
 terraform plan -out plan
 terraform apply "plan"
@@ -29,7 +29,7 @@ terraform apply "plan"
 After we created the state storage, we can proceed with vpc provision in the Ireland region:
 
 ```bash
-cd infrastructure/terraform/ireland
+cd infrastructure/terraform/eu-west/vpc
 terraform init
 terraform plan -out plan
 terraform apply "plan"
