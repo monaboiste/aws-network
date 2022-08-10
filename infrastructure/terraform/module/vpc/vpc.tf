@@ -13,13 +13,6 @@ resource "aws_internet_gateway" "internet_gateway" {
   tags   = merge({ Name = "${var.vpc_name}-igw" }, var.tags)
 }
 
-# Elastic IP for NAT
-resource "aws_eip" "nat_eip" {
-  vpc        = true
-  depends_on = [aws_internet_gateway.internet_gateway]
-  tags       = merge({ Name = "${var.vpc_name}-eip" }, var.tags)
-}
-
 # Public subnets
 resource "aws_subnet" "public_subnets" {
   vpc_id                  = aws_vpc.vpc.id
@@ -73,6 +66,13 @@ resource "aws_route" "public_internet_gateway" {
 
 # Uncomment when resources from private subnets must have an access to the Internet
 # NAT for the private subnet
+
+#resource "aws_eip" "nat_eip" {
+#  vpc        = true
+#  depends_on = [aws_internet_gateway.internet_gateway]
+#  tags       = merge({ Name = "${var.vpc_name}-eip" }, var.tags)
+#}
+
 #resource "aws_nat_gateway" "nat_gateway" {
 #  allocation_id = aws_eip.nat_eip.id
 #  subnet_id     = element(aws_subnet.public_subnets.*.id, 0)
