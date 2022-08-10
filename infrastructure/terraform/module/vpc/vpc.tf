@@ -17,7 +17,7 @@ resource "aws_internet_gateway" "internet_gateway" {
 resource "aws_eip" "nat_eip" {
   vpc        = true
   depends_on = [aws_internet_gateway.internet_gateway]
-  tags   = merge({ Name = "${var.vpc_name}-eip" }, var.tags)
+  tags       = merge({ Name = "${var.vpc_name}-eip" }, var.tags)
 }
 
 # Public subnets
@@ -43,7 +43,7 @@ resource "aws_subnet" "private_subnets" {
 # Private routing tables
 resource "aws_route_table" "private_rtb" {
   vpc_id = aws_vpc.vpc.id
-  tags = merge({ Name = "${var.vpc_name}-rtb-private" }, var.tags)
+  tags   = merge({ Name = "${var.vpc_name}-rtb-private" }, var.tags)
 }
 
 resource "aws_route_table_association" "private_rtb_association" {
@@ -55,7 +55,7 @@ resource "aws_route_table_association" "private_rtb_association" {
 # Public routing tables
 resource "aws_route_table" "public_rtb" {
   vpc_id = aws_vpc.vpc.id
-  tags = merge({ Name = "${var.vpc_name}-rtb-public" }, var.tags)
+  tags   = merge({ Name = "${var.vpc_name}-rtb-public" }, var.tags)
 }
 
 resource "aws_route_table_association" "public_rtb_association" {
