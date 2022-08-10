@@ -14,9 +14,9 @@ terraform {
 
   backend "s3" {
     bucket         = "monaboiste-terraform-state"
-    key            = "eu-west-1/vpc/monaboiste-vpc/terraform.tfstate"
+    key            = "eu-west-1/vpc/monaboiste-vpc-eu-west-1/terraform.tfstate"
     region         = "eu-west-1"
-    dynamodb_table = "monaboiste-terraform-state-locks"
+    dynamodb_table = "monaboiste-terraform-state-locks-eu-west-1"
     encrypt        = true
   }
 }
